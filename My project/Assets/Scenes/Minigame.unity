@@ -961,7 +961,7 @@ MonoBehaviour:
   looseTextObject: {fileID: 1165092110}
   buttonsCanvas: {fileID: 1523653125}
   countdownText: {fileID: 1994923116}
-  countdownTime: 120
+  countdownTime: 60
   pickUpSound: {fileID: 8300000, guid: b6147e030d0c51246a8b05e263747e85, type: 3}
   winSound: {fileID: 8300000, guid: 71639696b8370fb24b48c8180810e5c1, type: 3}
   loseSound: {fileID: 8300000, guid: 23ae97cfebef2f9c2b29b86b9afa5733, type: 3}

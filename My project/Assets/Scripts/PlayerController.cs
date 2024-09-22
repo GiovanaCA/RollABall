@@ -130,6 +130,11 @@ public class PlayerController : MonoBehaviour
         
         // apply force to the rigidbody to move the player
         rb.AddForce(movement * speed);
+
+        if (this.transform.position.y < -13f)
+        {
+            GameOver();
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -171,13 +176,13 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator CountdownTimer()
     {
-        while (countdownTime > 0 && count < 34)
+        while (countdownTime > 0 && count < 34 && lives > 0)
         {
             yield return new WaitForSeconds(1f);
             countdownTime--;
             UpdateCountdownDisplay();
         }
-        if (count < 34)
+        if (count < 34 || lives < 1)
         {
             GameOver();
         }
@@ -192,7 +197,7 @@ public class PlayerController : MonoBehaviour
         countdownText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
     }
 
-    // Trigger Game Over
+    // Game Over
     void GameOver()
     {
         audioSource.PlayOneShot(loseSound);
